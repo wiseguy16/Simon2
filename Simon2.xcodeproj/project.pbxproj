@@ -12,6 +12,11 @@
 		4AC4BBE11D69071B00961315 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBDF1D69071B00961315 /* Main.storyboard */; };
 		4AC4BBE31D69071B00961315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBE21D69071B00961315 /* Assets.xcassets */; };
 		4AC4BBE61D69071B00961315 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBE41D69071B00961315 /* LaunchScreen.storyboard */; };
+		4AC4BBF11D690D2F00961315 /* blue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBED1D690D2F00961315 /* blue.mp3 */; };
+		4AC4BBF21D690D2F00961315 /* green.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBEE1D690D2F00961315 /* green.mp3 */; };
+		4AC4BBF31D690D2F00961315 /* loserSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBEF1D690D2F00961315 /* loserSound.mp3 */; };
+		4AC4BBF41D690D2F00961315 /* red.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBF01D690D2F00961315 /* red.mp3 */; };
+		4AC4BBF61D690D3700961315 /* yellow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4BBF51D690D3700961315 /* yellow.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		4AC4BBE21D69071B00961315 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AC4BBE51D69071B00961315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AC4BBE71D69071B00961315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AC4BBED1D690D2F00961315 /* blue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blue.mp3; sourceTree = "<group>"; };
+		4AC4BBEE1D690D2F00961315 /* green.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = green.mp3; sourceTree = "<group>"; };
+		4AC4BBEF1D690D2F00961315 /* loserSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loserSound.mp3; sourceTree = "<group>"; };
+		4AC4BBF01D690D2F00961315 /* red.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = red.mp3; sourceTree = "<group>"; };
+		4AC4BBF51D690D3700961315 /* yellow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yellow.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,11 @@
 			children = (
 				4AC4BBDA1D69071A00961315 /* Simon2 */,
 				4AC4BBD91D69071A00961315 /* Products */,
+				4AC4BBED1D690D2F00961315 /* blue.mp3 */,
+				4AC4BBEE1D690D2F00961315 /* green.mp3 */,
+				4AC4BBEF1D690D2F00961315 /* loserSound.mp3 */,
+				4AC4BBF01D690D2F00961315 /* red.mp3 */,
+				4AC4BBF51D690D3700961315 /* yellow.mp3 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +141,11 @@
 			files = (
 				4AC4BBE61D69071B00961315 /* LaunchScreen.storyboard in Resources */,
 				4AC4BBE31D69071B00961315 /* Assets.xcassets in Resources */,
+				4AC4BBF31D690D2F00961315 /* loserSound.mp3 in Resources */,
+				4AC4BBF41D690D2F00961315 /* red.mp3 in Resources */,
+				4AC4BBF61D690D3700961315 /* yellow.mp3 in Resources */,
+				4AC4BBF21D690D2F00961315 /* green.mp3 in Resources */,
+				4AC4BBF11D690D2F00961315 /* blue.mp3 in Resources */,
 				4AC4BBE11D69071B00961315 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
