@@ -12,11 +12,12 @@ import AVFoundation
 class ViewController: UIViewController
 {
     var audioPlayer:AVAudioPlayer!
-    var delay4Timer = 0.75 // time in seconds
+    var delay4Timer = 0.9 // time in seconds
     var speedMPHtimer: Timer!
     var keepPlaying = true
     var hasLostYet = false
     var theIndex = 0
+    var simonIndex = -1
 
     var isSimonsTurn = false
     var isPlayerTurn = false
@@ -64,8 +65,9 @@ class ViewController: UIViewController
 
     @IBAction func startGameTapped(_ sender: UIButton)
     {
-     
+        keepPlaying = true
         simonGoes()
+        
     }
     
     @IBAction func yellowTapped(_ sender: UIButton)
@@ -133,51 +135,61 @@ class ViewController: UIViewController
     
     func simonGoes()
     {
+        if keepPlaying == true
+        {
+            
         let newInt =  arc4random_uniform(4) + 1
         var simonColor: WhichColor
-        switch newInt {
+        switch newInt
+            {
         case 1:
             simonColor = .red
-            // print("simon's Moves: ")
-            // print("\(simonColor)")
             simonMoves.append("\(simonColor)")
             simonButtonsArray.append(redButton)
-          //  animateButtonPress(redButton)
         case 2:
             simonColor = .green
-            // print("\(simonColor)")
-          //  animateButtonPress(greenButton)
             simonMoves.append("\(simonColor)")
             simonButtonsArray.append(greenButton)
         case 3:
             simonColor = .blue
-            // print("\(simonColor)")
             simonMoves.append("\(simonColor)")
             simonButtonsArray.append(blueButton)
-          //  animateButtonPress(blueButton)
         case 4:
             simonColor = .yellow
-            //  print("\(simonColor)")
             simonMoves.append("\(simonColor)")
             simonButtonsArray.append(yellowButton)
-            //animateButtonPress(yellowButton)
         default:
             print("no color")
             
-        }
+            }
         
-        for a in 0..<simonButtonsArray.count
-        {
-            animateButtonPress(simonButtonsArray[a])
-        }
+           speedMPHtimer = Timer.scheduledTimer(timeInterval: delay4Timer, target: self, selector: #selector(simonAnimates), userInfo: nil, repeats: true)
+       
         print("Simon's stuff")
         print(simonMoves)
         
         clearPlayerArray()
+        simonIndex = -1
 
-        
+        }
     }
     
+    func simonAnimates()
+    {
+        simonIndex = simonIndex + 1
+        if simonIndex < simonMoves.count
+            {
+                animateButtonPress(simonButtonsArray[simonIndex])
+            }
+        else
+            {
+                speedMPHtimer.invalidate()
+            }
+    }
+    
+    
+
+
     func clearPlayerArray()
     {
         playerMoves = []
@@ -201,36 +213,21 @@ class ViewController: UIViewController
                 }
             }
             audioPlayer.play()
+            playerMoves = []
+            simonMoves = []
+            simonButtonsArray = []
+             theIndex = 0
+             simonIndex = -1
+            keepPlaying = false
+
+            
+            //speedMPHtimer.invalidate()
+            
 
             }
         }
     
-    func whichButtonWasPressed()
-    {
-     //   if button == square1
-     //   {
-            //  playSound(soundName: "tone1")
-     //       playerMoves.append(button.colorString)
-            
-      //  }
-     //   else if button == square2
-     //   {
-            //   playSound(soundName: "tone2")
-      //      playerMoves.append(button.colorString)
-      //  }
-     //   else if button == square3
-     //   {
-            //  playSound(soundName: "tone3")
-      //      playerMoves.append(button.colorString)
-       // }
-      //  else if button == square4
-      //  {
-            //  playSound(soundName: "tone4")
-      //      playerMoves.append(button.colorString)
-      //  }
-
-    }
-
+    
     
     func animateButtonPress(_ button: UIButton)
     {
