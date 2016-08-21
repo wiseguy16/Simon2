@@ -36,6 +36,7 @@ class ViewController: UIViewController
     var simonButtonsArray = [UIButton]()
     
     
+    @IBOutlet weak var lastGameLabel: UILabel!
     
     @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
@@ -65,6 +66,8 @@ class ViewController: UIViewController
 
     @IBAction func startGameTapped(_ sender: UIButton)
     {
+        scoreLabel.text = "Score:"
+        //simonMoves = []
         keepPlaying = true
         simonGoes()
         
@@ -78,6 +81,7 @@ class ViewController: UIViewController
         theIndex = theIndex + 1
         if playerMoves.count == simonMoves.count
         {
+            scoreLabel.text = "Score: \(simonMoves.count)"
             simonGoes()
             theIndex = 0
         }
@@ -93,6 +97,7 @@ class ViewController: UIViewController
         theIndex = theIndex + 1
         if playerMoves.count >= simonMoves.count
         {
+            scoreLabel.text = "Score: \(simonMoves.count)"
             simonGoes()
             theIndex = 0
         }
@@ -108,6 +113,7 @@ class ViewController: UIViewController
         theIndex = theIndex + 1
         if playerMoves.count == simonMoves.count
         {
+            scoreLabel.text = "Score: \(simonMoves.count)"
             simonGoes()
             theIndex = 0
         }
@@ -125,6 +131,7 @@ class ViewController: UIViewController
         theIndex = theIndex + 1
         if playerMoves.count == simonMoves.count
         {
+            scoreLabel.text = "Score: \(simonMoves.count)"
             simonGoes()
             theIndex = 0
         }
@@ -198,7 +205,8 @@ class ViewController: UIViewController
     func checkForLoser()
         {
         if playerMoves[theIndex] == simonMoves[theIndex]
-        {
+            {
+                
              print("so far so good")
             }
             else
@@ -213,15 +221,17 @@ class ViewController: UIViewController
                 }
             }
             audioPlayer.play()
+            lastGameLabel.text = "Last Game \(scoreLabel.text!)"
             playerMoves = []
             simonMoves = []
             simonButtonsArray = []
+            
              theIndex = 0
              simonIndex = -1
             keepPlaying = false
 
             
-            //speedMPHtimer.invalidate()
+            speedMPHtimer.invalidate()
             
 
             }
