@@ -53,17 +53,16 @@ class ViewController: UIViewController
         gameStatusLabel.text = "Let's Play Simon!"
         
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
    
-
+// MARK - Beginning of game
+    
     @IBAction func startGameTapped(_ sender: UIButton)
     {
         scoreLabel.text = "Score:"
@@ -72,6 +71,8 @@ class ViewController: UIViewController
         simonGoes()
         
     }
+    
+// MARK - Button Actions Handled
     
     @IBAction func yellowTapped(_ sender: UIButton)
     {
@@ -140,6 +141,8 @@ class ViewController: UIViewController
        
     }
     
+    // MARK - Simon's thought process
+    
     func simonGoes()
     {
         if keepPlaying == true
@@ -202,6 +205,9 @@ class ViewController: UIViewController
         playerMoves = []
     }
     
+    
+    // MARK - See if they're a big Loser!!
+    
     func checkForLoser()
         {
         if playerMoves[theIndex] == simonMoves[theIndex]
@@ -237,7 +243,7 @@ class ViewController: UIViewController
             }
         }
     
-    
+// MARK - Anamation for any button
     
     func animateButtonPress(_ button: UIButton)
     {
